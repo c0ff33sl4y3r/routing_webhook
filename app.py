@@ -73,11 +73,13 @@ async def dynamic_url(request: Request, port: int, path:str):
         # Return response
         if isinstance(response.content, bytes):
             Content = response.content.decode('utf-8')
+        print(Content)
         try:
             Content = json.loads(Content)
         except:
             pass
         # Return the data
+        print(Content)
         return Content
     # If there is an error, log it to errlog.txt with trace
     except Exception as e:
@@ -133,7 +135,7 @@ async def update(request: Request):
         if not validators.url(url):
             raise Exception("A valid URL must be provided.")
         if not port or not url:
-            raise Exception("Missing page_id or url")
+            raise Exception("Missing port or url")
         if not cursor.execute("SELECT * FROM callback WHERE port = ?", (port,)).fetchone():
             cursor.execute("INSERT INTO callback VALUES (?, ?, ?, ?)", (port, url, access_token, description))
         else:

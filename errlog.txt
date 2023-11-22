@@ -1,0 +1,810 @@
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
+All connection attempts failed
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 167, in try_connect
+    stream = await asynclib.connect_tcp(remote_host, remote_port, local_address)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1627, in connect_tcp
+    await get_running_loop().create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1076, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1060, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 969, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 501, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 541, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.15.220.53', 9876)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 114, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 225, in connect_tcp
+    raise OSError("All connection attempts failed") from cause
+OSError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 268, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 251, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 99, in handle_async_request
+    raise exc
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 112, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jaibtdou/routing_webhook/app.py", line 71, in dynamic_url
+    response = await client.request(request.method, url, headers=headers, data=body)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jaibtdou/routing_webhook/.env/lib/python3.10/site-packages/httpx/_transports/default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+
