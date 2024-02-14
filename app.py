@@ -24,7 +24,7 @@ def verify_token(hub_mode, hub_challenge, hub_verify_token):
 async def ping(request: Request):
     query_params = request.query_params
     url = query_params.get("url")
-    await client.get(url)
+    await client.get(url, params={"url": "https://routing-0b5p.onrender.com"})
 
 # Setup a client to send requests
 @app.get("/")
